@@ -3,7 +3,7 @@ import random
 
 
 random_creatures = ["gorgon", "vampire", "gruffalo", "zombie", "minatour"]
-items = ["lollipop"]
+items = ["lollipop", "rock"]
 
 def print_pause(string):
     '''
@@ -38,10 +38,10 @@ def intro():
     greet_user('Ellen')
     greet_user('Sophie')
     greet_user('Joe')
+
     # TO DO: Ellen - figure out how to print items as a string without []
-    # Shows the type of items below
-    print(type(items))
-    print_pause(f"You find yourself in a dark cave and you only have a {items} in your hand")
+    string_items = ', '.join(items)
+    print_pause("You find yourself in a dark cave and you only have a " + string_items + " in your hand")
     first_choice()
 
 
