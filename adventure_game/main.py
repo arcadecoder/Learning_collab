@@ -39,6 +39,7 @@ def intro():
     greet_user('Sophie')
     greet_user('Joe')
     # TO DO: Ellen - figure out how to print items as a string without []
+    # Shows the type of items below
     print(type(items))
     print_pause(f"You find yourself in a dark cave and you only have a {items} in your hand")
     first_choice()
