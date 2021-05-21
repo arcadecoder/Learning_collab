@@ -3,6 +3,7 @@ import random
 
 
 random_creatures = ["gorgon", "vampire", "gruffalo", "zombie", "minatour"]
+creatures_dictionary = {"gorgon" : 10, "vampire": 30}
 items = ["lollipop", "rock"]
 
 def print_pause(string):
@@ -12,6 +13,14 @@ def print_pause(string):
     '''
     print(string)
     time.sleep(2)
+
+#TO DO: create a valid input function
+def valid_input(question, option1, option2):
+    response = input(question).upper()
+    if response == option1:
+        return response
+    
+    return 
 
 
 def greet_user(username):
@@ -27,6 +36,16 @@ def item_pickup():
         print_pause(f"You're inventory now contains {len(items)} items. You have: \n {inventory}")
     else: 
         print_pause("Are you sure?")
+
+def fight_monster(creature):
+    print_pause("You currently have 5XP Points.")
+    print_pause(f"The {creature} has 10XP Points")
+    choice = input(f"Do you want to fight the {creature}? Y/N")
+    if choice == "Y":
+        print_pause(f"You try your best, but the {creature} knocks you to the ground")
+        print_pause("You now have 0XP Points")
+    else: 
+        print_pause(f"You run away from the {creature} crying")
 
 
 def BabaYaga_house():
@@ -77,7 +96,10 @@ def first_choice():
     else: 
         print_pause('''Stumbling around the cave, you hear an ominous noise coming from deep in the darness \n ''')
         creature  = random.choice(random_creatures)
+        new_creature = random.choice(list(creatures_dictionary.keys()))
+        print(new_creature)
         print_pause(f"Oh no! You encounter a {creature}")
+        fight_monster(creature)
         #TO DO: new function that gives a choice to fight the monster or not - Ellen 
         #TO DO: function should first show XP points of the monster & inventory before presenting choice. - Ellen 
 
@@ -94,7 +116,3 @@ def intro():
 
 
 intro()
-
- 
-#creating a print pause function to make it more dramatic. in the terminal
-# Any other project ideas? 
