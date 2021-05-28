@@ -1,6 +1,6 @@
 import time 
 import random 
-
+from Ellen_input import valid_input
 
 random_creatures = ["gorgon", "vampire", "gruffalo", "zombie", "minatour"]
 creatures_dictionary = {"gorgon" : 10, "vampire": 30}
@@ -15,6 +15,7 @@ def print_pause(string):
     time.sleep(2)
 
 #TO DO: create a valid input function
+'''
 def valid_input(question, option1, option2):
     response = input(question).upper()
     if response == option1:
@@ -22,14 +23,14 @@ def valid_input(question, option1, option2):
     
     return 
 
-
+'''
 def greet_user(username):
     print_pause("Hello, " + username + "!")
 
 def item_pickup():
     print_pause("You see a faint glimmer in the sunshine")
     print_pause("You notice that it is in fact a sword")
-    choice = input("Do you want to pick up the sword? Y/N \n")
+    choice = valid_input("Do you want to pick up the sword? Y/N", "Y", "N")
     if choice == "Y":
         items.append("sword")
         inventory = ', '.join(items)
