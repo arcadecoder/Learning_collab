@@ -30,7 +30,7 @@ def greet_user(username):
 def item_pickup():
     print_pause("You see a faint glimmer in the sunshine")
     print_pause("You notice that it is in fact a sword")
-    choice = valid_input("Do you want to pick up the sword? Y/N", "Y", "N")
+    choice = valid_input("Do you want to pick up the sword? Y/N ", "Y", "N")
     if choice == "Y":
         items.append("sword")
         inventory = ', '.join(items)
