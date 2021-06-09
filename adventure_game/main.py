@@ -1,6 +1,8 @@
 import time 
 import random 
 from Ellen_input import valid_input
+from Joe_input import Y 
+from Joe_input import N 
 
 random_creatures = ["gorgon", "vampire", "gruffalo", "zombie", "minatour"]
 creatures_dictionary = {"gorgon" : 10, "vampire": 30}
@@ -31,7 +33,7 @@ def item_pickup():
     print_pause("You see a faint glimmer in the sunshine")
     print_pause("You notice that it is in fact a sword")
     choice = valid_input("Do you want to pick up the sword? Y/N ", "Y", "N")
-    if choice == "Y":
+    if choice in Y:
         items.append("sword")
         inventory = ', '.join(items)
         print_pause(f"You're inventory now contains {len(items)} items. You have: \n {inventory}")
